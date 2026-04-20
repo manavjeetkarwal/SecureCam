@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stored Photos - SecureCam</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/photos.css') }}">
+</head><body>
+<nav class="navbar"><div class="nav-left"><div class="logo"><img src="{{ url_for('static', filename='images/Logo.png') }}" alt="SecureCam Logo"><a href="/">Secure<span>Cam</span></a></div><div class="Intro"><p><b>Review and manage all captured photos.</b></p></div></div><div class="nav-right"><a href="/account" class="nav-link-chip" data-nav-path="/account">Account</a><div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div></div></nav>
+<div class="side-menu" id="sideMenu"><div class="side-menu-header"><h3>Secure<span>Cam</span></h3><p>Quick navigation</p></div><a href="/">Home</a><a href="/connect">Connect Camera</a><a href="/live">Live Viewer</a><a href="/activity">Activity</a><a href="/videos">Stored Videos</a><a href="/photos">Stored Photos</a><a href="/about">About</a><a href="/feedback">Feedback & Inquiry</a><a href="/account">Account Center</a></div>
+<div class="page-shell">
+  <section class="page-hero"><span class="pill">Stored Photos</span><h1>Your captured images in one gallery</h1><p>Browse saved photos, download what you need, and delete anything you no longer want to keep.</p></section>
+  <section class="gallery-head card card-pad">
+    <div><h3>Photo Library</h3><p class="muted">Each photo is linked to your own account.</p></div>
+  </section>
+  <section class="photos-section"><div id="photoGrid" class="photo-grid"></div></section>
+</div>
+<script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+<script src="{{ url_for('static', filename='js/photos.js') }}"></script>
+</body></html>

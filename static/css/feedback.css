@@ -1,0 +1,13 @@
+ .feedback-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top: 10px;}
+textarea{resize:vertical;min-height:140px}
+.emoji-section{margin:22px 0;display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.emoji-section input{display:none}
+.emoji-section span{
+  width:58px;height:58px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:28px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)
+}
+.emoji-section span:hover,.emoji-section input:checked + span{
+  transform:translateY(-4px) scale(1.06);background:rgba(124,92,255,.2);border-color:rgba(124,92,255,.34)
+}
+@media (max-width:980px){.feedback-grid,.row{grid-template-columns:1fr}}

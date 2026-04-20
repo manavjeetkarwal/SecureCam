@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SecureCam - Login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head><body>
+<nav class="navbar">
+  <div class="nav-left"><div class="logo"><img src="{{ url_for('static', filename='images/Logo.png') }}" alt="SecureCam Logo"><a href="/">Secure<span>Cam</span></a></div><div class="Intro"><p><b>Secure access to your camera.</b></p></div></div>
+  <div class="nav-right"><a href="/account" class="nav-link-chip" data-nav-path="/account">Account</a><div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div></div>
+</nav>
+<div class="side-menu" id="sideMenu"><div class="side-menu-header"><h3>Secure<span>Cam</span></h3><p>Quick navigation</p></div><a href="/">Home</a><a href="/connect">Connect Camera</a><a href="/live">Live Viewer</a><a href="/activity">Activity</a><a href="/videos">Stored Videos</a><a href="/photos">Stored Photos</a><a href="/about">About</a><a href="/feedback">Feedback & Inquiry</a><a href="/account">Account Center</a></div>
+
+<div class="auth-wrap">
+  <div class="auth-side">
+    <span class="badge">Secure Access</span>
+    <h1>Enter your SecureCam Account Info</h1>
+    <p>Sign in to manage your account, start the camera, view the live stream, and access saved photos and videos.</p>
+    <div class="auth-points">
+      <div><b>Quick login</b><span>Simple sign in flow with clean validation.</span></div>
+      <div><b>Safe account setup</b><span>Create your profile with email, phone, and date of birth.</span></div>
+      <div><b>Secure Access</b><span>Only authorized user can access data.</span></div>
+    </div>
+  </div>
+
+  <div class="auth-card">
+    <button class="close-btn" onclick="goHome()" aria-label="Close">✕</button>
+    <div class="logo-circle"><img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo"></div>
+
+    <div id="loginForm">
+      <h2>Sign In</h2>
+      <p class="subtext">Access your SecureCam dashboard</p>
+      <input id="loginUsername" type="text" placeholder="Username">
+      <p class="error" id="loginUserError"></p>
+      <input id="loginPassword" type="password" placeholder="Password">
+      <p class="error" id="loginPassError"></p>
+      <button class="btn auth-btn" onclick="validateLogin()">Sign In</button>
+      <p class="switch-text">Don't have an account? <span onclick="showSignup()">Create one</span></p>
+    </div>
+
+    <div id="signupForm" style="display:none;">
+      <h2>Create Account</h2>
+      <p class="subtext">Start using SecureCam in minutes</p>
+      <input id="signupUsername" type="text" placeholder="Create Username">
+      <p class="error" id="signupUserError"></p>
+      <input id="signupPassword" type="password" placeholder="Create Password">
+      <p class="error" id="signupPassError"></p>
+      <input id="confirmPassword" type="password" placeholder="Re-enter Password">
+      <p class="error" id="confirmPassError"></p>
+      <input id="email" type="email" placeholder="Email Address">
+      <p class="error" id="emailError"></p>
+      <input id="dob" type="date">
+      <p class="error" id="dobError"></p>
+      <input id="phone" type="tel" placeholder="Phone Number">
+      <p class="error" id="phoneError"></p>
+      <button class="btn auth-btn" onclick="validateSignup()">Sign Up</button>
+      <p class="switch-text">Already have an account? <span onclick="showLogin()">Sign In</span></p>
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body></html>

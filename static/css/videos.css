@@ -1,0 +1,9 @@
+ .gallery-head{margin-bottom:22px}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+.video-card{padding:16px;border-radius:24px;background:linear-gradient(180deg,rgba(18,26,48,.95),rgba(9,14,25,.98));border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+.video-card:hover{transform:translateY(-4px);border-color:rgba(124,92,255,.24)}
+.video-card video{width:100%;border-radius:18px;background:#000;display:block}
+.video-info{margin-top:14px;display:grid;gap:8px}
+.info-chip{padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.04);color:var(--muted);border:1px solid rgba(255,255,255,.06)}
+.video-buttons{margin-top:14px;display:flex;gap:10px}
+.video-buttons button{flex:1}

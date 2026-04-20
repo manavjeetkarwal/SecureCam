@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SecureCam - Viewer</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/live.css') }}">
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head><body>
+<nav class="navbar">
+  <div class="nav-left"><div class="logo"><img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo"><a href="/">Secure<span>Cam</span></a></div><div class="Intro"><p><b>Watch the stream, save evidence, and trigger alerts.</b></p></div></div>
+  <div class="nav-right"><a href="/account" class="nav-link-chip" data-nav-path="/account">Account</a><div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div></div>
+</nav>
+<div class="side-menu" id="sideMenu"><div class="side-menu-header"><h3>Secure<span>Cam</span></h3><p>Quick navigation</p></div><a href="/">Home</a><a href="/connect">Connect Camera</a><a href="/live">Live Viewer</a><a href="/activity">Activity</a><a href="/videos">Stored Videos</a><a href="/photos">Stored Photos</a><a href="/about">About</a><a href="/feedback">Feedback & Inquiry</a><a href="/account">Account Center</a></div>
+
+<div class="page-shell">
+  <section class="page-hero"><span class="pill">Live Monitoring Panel </span><h1>Connect to a camera and manage the live session</h1><p>Enter the camera ID to watch the stream, save photos and videos, trigger alarms, open activity analysis, and view the camera location in real time.</p></section>
+  <div class="connect-bar card card-pad">
+    <div class="field grow"><label for="cameraIdInput">Camera ID</label><input id="cameraIdInput" placeholder="Enter Camera ID"></div>
+    <button class="btn connect-action" onclick="connectViewer()">Connect</button>
+  </div>
+  <p id="viewerNameLabel" class="viewer-name" style="display:none;"></p>
+  <div id="humanAlertBanner" class="alert-banner" style="display:none;"></div>
+
+  <div class="viewer-layout">
+    <div class="viewer-column">
+      <div class="card viewer-panel">
+        <div class="video-topbar">
+          <span class="pill">Live Stream</span>
+          <div id="recIndicator" class="rec-indicator" style="display:none;">● REC <span id="recTimer">00:00</span></div>
+        </div>
+        <video id="remoteVideo" autoplay playsinline controls></video>
+        <div class="action-buttons">
+          <button class="btn-secondary" onclick="startRecording()">Start Recording</button>
+          <button class="btn-warning" onclick="stopRecording()">Stop Recording</button>
+          <button class="btn" onclick="capturePhoto()">Capture Photo</button>
+          <button class="btn-danger" onclick="triggerAlarm()">Trigger Alarm</button>
+          <button class="btn-success" onclick="openActivityPage()">Activity</button>
+          <button class="btn-ghost" onclick="stopLiveStream()">Stop Live Stream</button>
+        </div>
+      </div>
+
+      <div id="chatBox" class="card card-pad">
+        <h3>Chat with Camera</h3>
+        <div id="messages"></div>
+        <div class="chat-row">
+          <input id="chatInput" placeholder="Type message">
+          <button class="btn" onclick="sendChat()">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card map-panel">
+      <div class="panel-head"><h3>Camera Location</h3><span class="pill">Live map</span></div>
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+
+<audio id="viewerAlarmSound"><source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" type="audio/ogg"></audio>
+<script>const CURRENT_USER = "{{ username }}";</script>
+<script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+<script src="{{ url_for('static', filename='js/live.js') }}"></script>
+</body></html>

@@ -1,0 +1,26 @@
+ .connect-layout{display:grid;grid-template-columns:1.45fr .85fr;gap:22px}
+.camera-box{padding:24px}
+.camera-toolbar{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.human-btn{background:linear-gradient(135deg,rgba(124,92,255,.28),rgba(90,139,255,.18));color:#f0ecff;border:1px solid rgba(124,92,255,.3)}
+.error-box{min-height:22px;color:#ff9fb0;font-weight:700;margin-bottom:14px}
+.camera-meta{display:grid;grid-template-columns:1fr auto;gap:14px;margin-bottom:16px}
+.camera-id-box,.camera-tip{padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}
+.camera-id-box span{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
+.camera-id-box strong{font-size:26px;letter-spacing:1px;color:#f3edff}
+.camera-tip{display:flex;align-items:center;color:var(--muted);line-height:1.65}
+.video-frame{position:relative}
+#localVideo{width:100%;min-height:420px;display:block;border-radius:24px;background:#000;object-fit:cover}
+#alertOverlay{
+  position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:42px;font-weight:900;color:#fff;
+  background:rgba(255,68,97,.52);backdrop-filter:blur(2px);border-radius:24px;animation:flash 1s infinite
+}
+@keyframes flash{0%,100%{opacity:1}50%{opacity:.35}}
+.side-panels{display:grid;gap:22px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.viewer-list{list-style:none;display:grid;gap:10px;margin-top:16px}
+.viewer-list li{padding:13px 14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);color:#eaf1ff}
+#messages{height:250px;overflow-y:auto;border-radius:18px;padding:14px;border:1px solid rgba(255,255,255,.08);background:#0a1020;margin:16px 0}
+#messages p{padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.04);margin-bottom:8px;line-height:1.55}
+.chat-controls{display:flex;gap:10px}
+@media (max-width:1100px){.connect-layout{grid-template-columns:1fr}.camera-meta{grid-template-columns:1fr}}
+@media (max-width:700px){.chat-controls{flex-direction:column}}
