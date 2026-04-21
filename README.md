@@ -181,7 +181,7 @@ Science City, Punjab
 ---
 
 ## 👨‍💻 Authors
-
+Jaspreet Kaur
 Manavjeet Singh  
 Gursehaj Pal Singh  
 
