@@ -4,6 +4,12 @@ A web-based smart surveillance and monitoring platform that provides real-time v
 
 ---
 
+## 🚀 Live Demo
+
+👉 **Access the application:**  
+https://secure-cam.onrender.com/
+
+
 ## 📌 Project Overview
 
 SecureCam transforms a simple device into a smart security system.  
